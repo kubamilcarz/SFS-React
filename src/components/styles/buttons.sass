@@ -1,0 +1,84 @@
+.btn
+    margin: 0 -6px 0 0
+    padding: 6px
+    box-sizing: border-box
+    background-color: $whiteBtnColor
+    color: $accentColor
+    appearance: none
+    font-size: 13px
+    border: none
+    border-radius: 5px
+    box-sizing: border-box
+    transition: 120ms all ease-in-out
+    &:hover
+        cursor: pointer
+        background-color: darken($whiteBtnColor, 5%)
+    svg.svg-inline--fa
+        margin-right: 5px
+    
+.btnHold:focus
+    transform: scale(0.95)
+
+.btnLink
+    background-color: transparent
+    &:hover
+        background-color: lighten($accentColor, 30%)
+
+.btnBig
+    padding: 10px 20px
+
+.btnBigger
+    padding: 10px 20px
+    font-size: 17px
+    border-radius: 9px
+
+.btnPrimary
+    background: $accentColor
+    color: white
+    &:hover
+        background: darken($accentColor, 5%)
+
+.btnWarning
+    background: #e74c3c
+    color: white
+    &:hover
+        background: #c0392b
+
+.SFSCard
+    border-radius: 15px
+    background: white
+    box-sizing: border-box
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3)
+    margin: 0
+
+.SFSModal
+    max-width: 550px
+    width: 100%
+    padding: 50px
+    position: fixed
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    z-index: 1000
+    .SFSCardClose
+        position: absolute
+        right: 25px
+        top: 25px
+        button
+            margin: 0
+            width: 40px
+            height: 40px
+            line-height: 32px
+            text-align: center
+            padding-left: 11px
+            border-radius: 50%
+            font-size: $fontSizeLarge
+            display: block
+.SFSModalOverlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background: rgba(0, 0, 0, 0.3)
+    z-index: 999

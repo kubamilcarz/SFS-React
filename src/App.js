@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Route, Switch } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/modules/Footer";
+
+import HomePage from "./components/pages/HomePage";
+import Login from "./components/pages/Auth/Login";
+import Register from "./components/pages/Auth/Register";
+import ProfilePage from "./components/pages/ProfilePage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [IsLoggedIn, setIsLoggedIn] = useState(false);
+
+    return (
+        <>
+            <Navbar isLoggedIn={IsLoggedIn} />
+            <div className="container">  
+                <Switch>
+                    <Route path="/" exact>
+                        <HomePage />
+                    </Route>
+                    <Route path="/login" exact>
+                        <Login />
+                    </Route>
+                    <Route path="/register" exact>
+                        <Register />
+                    </Route>
+                    <Route path="/user/:userID">
+                        <ProfilePage />
+                    </Route>
+                </Switch>
+            </div>
+            <Footer isFullWidth={true} />
+        </>
+    );
 }
 
 export default App;

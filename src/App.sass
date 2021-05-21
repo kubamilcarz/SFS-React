@@ -1,0 +1,68 @@
+@import './components/styles/utilities'
+
+body
+  margin: 0
+  background-color: #fff
+  color: $systemBlack
+  font-family: $fontFamily
+
+button::-moz-focus-inner,
+input::-moz-focus-inner
+  border: 0
+  padding: 0
+
+a
+  color: $accentColor
+
+.container
+  max-width: $containerWidth
+  margin: 100px auto
+
+.containerSmall
+  width: 100%
+  max-width: 550px
+  margin: 0 auto
+
+.SFSPageStartAtTheTop
+  margin-top: -75px
+
+.SFSPageContainer
+  .bigTitle
+    margin-bottom: 50px
+
+.SFSPostContainer
+  > div
+    margin-bottom: 30px
+
+.SFSFooter
+  position: absolute
+  bottom: 0
+  left: 0
+  background: lighten($lightGrey, 10%)
+  width: 100%
+  height: 300px
+  display: flex
+  align-content: center
+  justify-content: center
+  p
+    margin: 0
+    line-height: 300px
+    color: darken($lightGrey, 25%)
+
+.userNotSelectable
+  user-select: none
+
+.unlink
+  color: $systemBlack
+  text-decoration: none
+  &:hover
+    cursor: pointer
+
+.textCenter
+  text-align: center
+
+.bigTitle
+  font-size: 36px
+
+@import './components/styles/buttons'
+@import './components/styles/forms'
