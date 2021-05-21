@@ -8,7 +8,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ButtonHold from "./ButtonHold";
 
-const Modal = ({ children, closeModal }) => {
+const Modal = ({ children, closeModal, className }) => {
     const history = useHistory();
     useEffect(() => {
         return history.listen((loc) => {
@@ -18,7 +18,7 @@ const Modal = ({ children, closeModal }) => {
 
     return (
         <Card>
-            <div className="SFSModal SFSCard">
+            <div className={`SFSModal SFSCard ${className}`}>
                 <div className="SFSCardClose">
                     <ButtonHold handleOnClick={closeModal}>
                         <FontAwesomeIcon icon={faTimes} />

@@ -14,30 +14,44 @@ import Preview from "./Preview";
 import ProfileBanner from "./Profile/ProfileBanner";
 
 const Post = ({ key, userID, dob, content, ctas }) => {
-    const [delayHandler, setDelayHandler] = useState(null)
-    const [profilePreviewOpen, setProfilePreviewOpen] = useState(false)
+    const [delayHandler, setDelayHandler] = useState(null);
+    const [profilePreviewOpen, setProfilePreviewOpen] = useState(false);
     const showProfilePreview = () => {
-        setDelayHandler(setTimeout(() => {
-            setProfilePreviewOpen(true)
-        }, 500))
-    }
+        setDelayHandler(
+            setTimeout(() => {
+                setProfilePreviewOpen(true);
+            }, 500)
+        );
+    };
 
     const closeProfilePreview = () => {
-        setProfilePreviewOpen(false)
-        clearTimeout(delayHandler);
-    }
+        setTimeout(() => {
+            setProfilePreviewOpen(false);
+            clearTimeout(delayHandler);
+        }, 500);
+    };
 
     return (
         <Card id={key}>
             <div className={styles.post}>
                 <header className={styles.header}>
                     <Link to={`/user/${userID}`} className="unlink">
-                        <div onMouseOver={showProfilePreview} onMouseLeave={closeProfilePreview}>
+                        <div
+                            onMouseOver={showProfilePreview}
+                            onMouseLeave={closeProfilePreview}
+                        >
                             <Avatar size="m" bordered={false} rounded={true} />
                             <h1 className={styles.username}>{userID}</h1>
                         </div>
                     </Link>
-                    {profilePreviewOpen ? <Preview><ProfileBanner size="m" userInfo={{userID: userID}} /></Preview> : null}
+                    {profilePreviewOpen ? (
+                        <Preview className={styles.profilePreview}>
+                            <ProfileBanner
+                                size="m"
+                                userInfo={{ userID: userID }}
+                            />
+                        </Preview>
+                    ) : null}
 
                     <div className={styles.clock}>
                         <FontAwesomeIcon icon={faClock} />

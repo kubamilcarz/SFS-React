@@ -52,6 +52,12 @@
     &:hover
         background: darken($warningColor, 5%)
 
+.btnWarningOutline
+    border: 2px solid $warningColor
+    color: $warningColor
+    &:hover
+        border-color: darken($warningColor, 10%)
+
 .SFSCard
     border-radius: 15px
     background: white
@@ -84,6 +90,8 @@
             border-radius: 50%
             font-size: $fontSizeLarge
             display: block
+.modalNotFullHeight
+    height: auto
 .SFSModalOverlay
     position: absolute
     top: 0
@@ -95,6 +103,5 @@
 
 .SFSPreview
     position: absolute
-    left: 75px
     max-width: 300px
     width: 100%

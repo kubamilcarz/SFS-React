@@ -2,15 +2,20 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ButtonHold from "./modules/ButtonHold";
 import Modal from "./modules/Modal";
+import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import SearchBar from "./SearchBar";
 import classes from "./styles/Navbar.module.sass";
 import { APP_NAME } from "./utilities/constants";
 
 const Navbar = ({ isLoggedIn }) => {
-    const [isOpen, setOpen] = useState(false);
-    const toggleModal = () => {
-        setOpen((prev) => !prev);
+    const [isRegisterOpen, setRegisterOpen] = useState(false);
+    const [isLoginOpen, setLoginOpen] = useState(false);
+    const toggleRegisterModal = () => {
+        setRegisterOpen((prev) => !prev);
+    };
+    const toggleLoginModal = () => {
+        setLoginOpen((prev) => !prev);
     };
 
     return (
@@ -27,14 +32,12 @@ const Navbar = ({ isLoggedIn }) => {
                 <div className={classes.navbarActionItems}>
                     {isLoggedIn ? null : (
                         <div className={classes.navbarActionBtns}>
-                            <Link to="/login">
-                                <ButtonHold className="btnBig btnPrimary">
-                                    Login
-                                </ButtonHold>
-                            </Link>
+                            <ButtonHold className="btnBig btnPrimary" handleOnClick={toggleLoginModal}>
+                                Login
+                            </ButtonHold>
                             <ButtonHold
                                 className="btnBig"
-                                handleOnClick={toggleModal}
+                                handleOnClick={toggleRegisterModal}
                             >
                                 Register
                             </ButtonHold>
@@ -42,9 +45,20 @@ const Navbar = ({ isLoggedIn }) => {
                     )}
                 </div>
             </nav>
-            {isOpen && (
-                <Modal closeModal={toggleModal}>
+            {isRegisterOpen && (
+                <Modal
+                    className="modalNotFullHeight"
+                    closeModal={toggleRegisterModal}
+                >
                     <Register />
+                </Modal>
+            )}
+            {isLoginOpen && (
+                <Modal
+                    className="modalNotFullHeight"
+                    closeModal={toggleLoginModal}
+                >
+                    <Login />
                 </Modal>
             )}
         </header>

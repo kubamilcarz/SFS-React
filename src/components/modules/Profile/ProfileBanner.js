@@ -107,7 +107,7 @@ const ProfileBanner = ({ size = "l", userInfo }) => {
                         </li>
                     </ul>
                     <div className={styles.ctas}>
-                        <ButtonHold className="btnWarning">
+                        <ButtonHold className="btnWarningOutline">
                             <FontAwesomeIcon icon={faUserPlus} />
                             Remove Friend
                         </ButtonHold>

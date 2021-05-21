@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "./Card";
 
-const Preview = ({ children }) => {
+const Preview = ({ children, className }) => {
     return (
-        <div className="SFSPreview">
+        <div className={`SFSPreview ${className}`}>
             <Card>
                 {children}
             </Card>
