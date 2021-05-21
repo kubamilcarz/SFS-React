@@ -36,6 +36,10 @@
     font-size: 17px
     border-radius: 9px
 
+.btnActive
+    color: $accentColor !important
+    background-color: lighten($accentColor, 30%)
+
 .btnPrimary
     background: $accentColor
     color: white
@@ -54,6 +58,8 @@
     box-sizing: border-box
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3)
     margin: 0
+    height: 100%
+    width: 100%
 
 .SFSModal
     max-width: 550px
@@ -86,3 +92,9 @@
     height: 100vh
     background: rgba(0, 0, 0, 0.3)
     z-index: 999
+
+.SFSPreview
+    position: absolute
+    left: 75px
+    max-width: 300px
+    width: 100%

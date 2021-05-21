@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 import Card from "./Card";
 import styles from "./../styles/Post.module.sass";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,18 +10,34 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
+import Preview from "./Preview";
+import ProfileBanner from "./Profile/ProfileBanner";
 
 const Post = ({ key, userID, dob, content, ctas }) => {
+    const [delayHandler, setDelayHandler] = useState(null)
+    const [profilePreviewOpen, setProfilePreviewOpen] = useState(false)
+    const showProfilePreview = () => {
+        setDelayHandler(setTimeout(() => {
+            setProfilePreviewOpen(true)
+        }, 500))
+    }
+
+    const closeProfilePreview = () => {
+        setProfilePreviewOpen(false)
+        clearTimeout(delayHandler);
+    }
+
     return (
         <Card id={key}>
             <div className={styles.post}>
                 <header className={styles.header}>
                     <Link to={`/user/${userID}`} className="unlink">
-                        <div>
+                        <div onMouseOver={showProfilePreview} onMouseLeave={closeProfilePreview}>
                             <Avatar size="m" bordered={false} rounded={true} />
                             <h1 className={styles.username}>{userID}</h1>
                         </div>
                     </Link>
+                    {profilePreviewOpen ? <Preview><ProfileBanner size="m" userInfo={{userID: userID}} /></Preview> : null}
 
                     <div className={styles.clock}>
                         <FontAwesomeIcon icon={faClock} />

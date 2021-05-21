@@ -1,8 +1,10 @@
 import React from 'react'
-import { useParams, useHistory } from 'react-router'
+import { useParams } from 'react-router'
+
 import ProfileBanner from '../modules/Profile/ProfileBanner'
 
-const ProfilePage = () => {
+
+const ProfileLikesPage = () => {
     const {userID} = useParams()
 
     const userInfo = {
@@ -11,9 +13,10 @@ const ProfilePage = () => {
 
     return (
         <div className="SFSPageStartAtTheTop">
-            <ProfileBanner size="l" userInfo={userInfo} />
+            <ProfileBanner userInfo={userInfo} />
+            <h1>{userInfo.userID}'s Likes</h1>
         </div>
     )
 }
 
-export default ProfilePage
+export default ProfileLikesPage
