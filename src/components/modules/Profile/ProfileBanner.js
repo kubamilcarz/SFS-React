@@ -13,27 +13,49 @@ const ProfileBanner = ({ size = "l", userInfo }) => {
 
     return (
         <Card>
-            <div className={styles.banner}>
+            <div className={`userNotSelectable ${styles.banner}`}>
                 <img
                     className={styles.bgImg}
                     alt="background image"
                     src={bgImg}
                 />
-                <div className={styles.bar}>
+                <div className={styles.bannerBar}>
                     <div className={styles.info}>
                         <Avatar size="l" rounded={true} />
                         <h1 className={styles.name}>{userInfo.userID}</h1>
                     </div>
-                    <div className={`userNotSelectable ${styles.ctas}`}>
-                        <ButtonHold className="btnBigger btnWarning">
-                            <FontAwesomeIcon icon={faUserPlus} />
-                            Remove Friend
-                        </ButtonHold>
-                        <ButtonHold className="btnBigger btnPrimary">
-                            <FontAwesomeIcon icon={faUsers} />
-                            Follow
-                        </ButtonHold>
-                    </div>
+                    <ul className={styles.profileStats}>
+                        <li>
+                            <span className={styles.number}>4232</span>
+                            <span className={styles.category}>Followers</span>
+                        </li>
+                        <li>
+                            <span className={styles.number}>121</span>
+                            <span className={styles.category}>Following</span>
+                        </li>
+                        <li>
+                            <span className={styles.number}>352</span>
+                            <span className={styles.category}>Friends</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className={`userNotSelectable ${styles.bar}`}>
+                <ul className={styles.profileLinks}>
+                    <li className="btn btnNoMargin btnBig btnLink">Posts</li>
+                    <li className="btn btnNoMargin btnBig btnLink">Reposts</li>
+                    <li className="btn btnNoMargin btnBig btnLink">Likes</li>
+                    <li className="btn btnNoMargin btnBig btnLink">Photos</li>
+                </ul>
+                <div className={styles.ctas}>
+                    <ButtonHold className="btnWarning">
+                        <FontAwesomeIcon icon={faUserPlus} />
+                        Remove Friend
+                    </ButtonHold>
+                    <ButtonHold className="btnPrimary">
+                        <FontAwesomeIcon icon={faUsers} />
+                        Follow
+                    </ButtonHold>
                 </div>
             </div>
         </Card>

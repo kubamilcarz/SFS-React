@@ -15,6 +15,9 @@
         background-color: darken($whiteBtnColor, 5%)
     svg.svg-inline--fa
         margin-right: 5px
+
+.btnNoMargin
+    margin: 0
     
 .btnHold:focus
     transform: scale(0.95)
@@ -26,6 +29,7 @@
 
 .btnBig
     padding: 10px 20px
+    font-size: $fontSizeMedium
 
 .btnBigger
     padding: 10px 20px
@@ -39,10 +43,10 @@
         background: darken($accentColor, 5%)
 
 .btnWarning
-    background: #e74c3c
+    background: $warningColor
     color: white
     &:hover
-        background: #c0392b
+        background: darken($warningColor, 5%)
 
 .SFSCard
     border-radius: 15px

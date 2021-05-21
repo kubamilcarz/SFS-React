@@ -11,7 +11,7 @@
     height: 300px
     object-fit: cover
     border-radius: $cardRadius
-.bar
+.bannerBar
     position: relative
     z-index: 2
     top: calc(100% - 100px)
@@ -33,7 +33,45 @@
             font-size: 36px
             color: white
             text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3)
-    .ctas
+    .profileStats
+        list-style-type: none
+        padding: 10px 0
+        margin: 0
         display: grid
-        grid-template-columns: 1fr 1fr
-        column-gap: 25px
+        column-gap: 15px
+        grid-template-columns: repeat(3, 1fr)
+        color: white
+        li
+            display: flex
+            flex-direction: column
+            justify-content: center
+            text-align: center
+        .number
+            font-weight: bold
+            font-size: $fontSizeLarge
+            margin-bottom: 5px
+        .category
+            font-size: $fontSizeMedium
+            color: $lightGrey
+.ctas
+    display: grid
+    grid-template-columns: 1fr 1fr
+    column-gap: 25px
+
+.bar
+    display: flex
+    justify-content: space-between
+    box-sizing: border-box
+    padding: 15px 25px
+    .profileLinks
+        list-style-type: none
+        padding: 0
+        margin: 0 0 0 150px
+        display: flex
+        align-items: center
+        li
+            color: $systemBlack
+            text-transform: uppercase
+            font-size: $fontSize
+            &:hover
+                color: $accentColor
