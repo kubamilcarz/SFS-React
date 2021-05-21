@@ -1,12 +1,14 @@
 @import 'utilities'
 
 .navbar 
-    position: sticky
+    position: fixed
+    z-index: 300
     top: 0
     margin: 15px auto 0 auto
-    left: 15px
+    left: 50%
+    transform: translateX(-50%)
     border-radius: 15px
-    width: calc(100vw - 30px)
+    width: $containerWidth
     height: 70px
     background-color: white
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3)

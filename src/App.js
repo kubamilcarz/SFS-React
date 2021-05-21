@@ -32,7 +32,7 @@ function App() {
                     <Route path="/user/:userID/photos" component={ProfilePhotosPage} />
                 </Switch>
             </div>
-            <Footer isFullWidth={true} />
+            {/* <Footer isFullWidth={true} /> */}
         </>
     );
 }

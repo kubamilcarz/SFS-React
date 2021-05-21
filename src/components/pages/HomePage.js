@@ -25,7 +25,40 @@ const HomePage = () => {
                 comments: 41,
                 shares: 7
             }
-        }
+        },
+        {
+            postID: 3,
+            userID: 52341,
+            content: "For the first time in nearly three decades, Alabama will allow yoga to be taught in its public schools, but teachers will be barred from saying the traditional salutation “namaste” and using Sanskrit names for poses. https://t.co/MQHNyGkHI9",
+            dob: "05-21-2021",
+            ctas: {
+                likes: 414,
+                comments: 525,
+                shares: 131
+            }
+        },
+        {
+            postID: 4,
+            userID: 12131,
+            content: "For the first time in nearly three decades, Alabama will allow yoga to be taught in its public schools, but teachers will be barred from saying the traditional salutation “namaste” and using Sanskrit names for poses. https://t.co/MQHNyGkHI9",
+            dob: "05-21-2021",
+            ctas: {
+                likes: 673,
+                comments: 42,
+                shares: 86
+            }
+        },
+        {
+            postID: 5,
+            userID: 2324,
+            content: "For the first time in nearly three decades, Alabama will allow yoga to be taught in its public schools, but teachers will be barred from saying the traditional salutation “namaste” and using Sanskrit names for poses. https://t.co/MQHNyGkHI9",
+            dob: "05-21-2021",
+            ctas: {
+                likes: 162,
+                comments: 962,
+                shares: 24
+            }
+        },
     ];
 
     return (

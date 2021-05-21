@@ -28,7 +28,7 @@ const Post = ({ key, userID, dob, content, ctas }) => {
         setTimeout(() => {
             setProfilePreviewOpen(false);
             clearTimeout(delayHandler);
-        }, 500);
+        }, 100);
     };
 
     return (
