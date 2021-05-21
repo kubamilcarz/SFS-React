@@ -12,8 +12,9 @@ import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
 import Preview from "./Preview";
 import ProfileBanner from "./Profile/ProfileBanner";
+import { APP_IS_LOGGEDIN } from "../utilities/constants";
 
-const Post = ({ key, userID, dob, content, ctas }) => {
+const Post = ({ postID, userID, dob, content, ctas }) => {
     const [delayHandler, setDelayHandler] = useState(null);
     const [profilePreviewOpen, setProfilePreviewOpen] = useState(false);
     const showProfilePreview = () => {
@@ -32,7 +33,7 @@ const Post = ({ key, userID, dob, content, ctas }) => {
     };
 
     return (
-        <Card id={key}>
+        <Card id={postID}>
             <div className={styles.post}>
                 <header className={styles.header}>
                     <Link to={`/user/${userID}`} className="unlink">
@@ -59,7 +60,8 @@ const Post = ({ key, userID, dob, content, ctas }) => {
                     </div>
                 </header>
                 <div content={styles.content}>{content}</div>
-                <footer className={styles.ctas}>
+                {APP_IS_LOGGEDIN && (
+                    <footer className={styles.ctas}>
                     <button className="btn btnLink btnBig">
                         <FontAwesomeIcon icon={faHeart} />
                         {ctas.likes}
@@ -73,6 +75,8 @@ const Post = ({ key, userID, dob, content, ctas }) => {
                         {ctas.shares}
                     </button>
                 </footer>
+                )}
+                
             </div>
         </Card>
     );
